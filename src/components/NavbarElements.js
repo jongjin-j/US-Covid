@@ -9,24 +9,24 @@ export const NavbarElements = [
         title: 'Single State',
         path: '/',
         icon: <RiIcons.RiVirusFill/>,
-        class: 'nav-text'
+        className: 'nav-text'
     },
     {
         title: 'Compare States',
         path: '/compare',
         icon: <GoIcons.GoArrowBoth/>,
-        class: 'nav-text'
+        className: 'nav-text'
     },
     {
         title: 'Aggregate',
         path: '/aggregate',
         icon: <FaIcons.FaFlagUsa/>,
-        class: 'nav-text'
+        className: 'nav-text'
     },
     {
         title: 'Source',
         path: '/source',
         icon: <VscIcons.VscSourceControl/>,
-        class: 'nav-text'
+        className: 'nav-text'
     }
 ]

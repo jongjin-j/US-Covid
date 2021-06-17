@@ -5,5 +5,4 @@ const getData = (baseURL) => {
     return request.then(response => response.data)
 }
 
-
 export default {getData}
