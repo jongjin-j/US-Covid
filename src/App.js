@@ -1,16 +1,9 @@
 import './App.css';
 import covidService from './services/covidData'
 import React, { useEffect, useState } from 'react'
-
-const Data = ({p, cases, vax}) => {
-  return(
-    <div>
-      <p>Total population: {p}</p>
-      <p>Active cases: {cases}</p>
-      <p>Number of people vaccinated: {vax}</p>
-    </div>
-  )
-}
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Data from './components/Data'
+import Navbar from './components/Navbar'
 
 
 function App() {
@@ -42,9 +35,15 @@ function App() {
 
   return (
     <div>
-      <div className = "App">
-        <h1>US covid</h1>
-        <form>
+      <div>
+        <h1 className = "App">US covid</h1>
+        <Router>
+          <Navbar/>
+          <Switch>
+            <Route path = '/'/>
+          </Switch>
+        </Router>
+        <form className = "App">
           <label>
             <select value = {state} onChange = {handleStateChange}>
               <option>MA</option>
