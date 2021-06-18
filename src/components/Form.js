@@ -1,11 +1,11 @@
 import React from 'react'
 import '../App.css'
 
-function Form({state, handler}) {
+function Form({state, handler, status}) {
     return (
-        <form className = "App">
-            <label>
-              <select value = {state} onChange = {(handler)}>
+        <form className = "form">
+            <label> {status} &nbsp;
+              <select className = "dropDown" value = {state} onChange = {(handler)}>
                 <option>AL</option>
                 <option>AK</option>
                 <option>AZ</option>

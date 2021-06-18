@@ -1,8 +1,8 @@
 import '../App.css'
 import covidService from '../services/covidData'
 import React, { useEffect, useState } from 'react'
-import Data from '../components/Data'
 import Form from '../components/Form'
+import SingleData from '../components/SingleData'
 
 function SingleState() {
 
@@ -11,6 +11,9 @@ function SingleState() {
   
     const [state, setState] = useState('MA')
     const [population, setPopulation] = useState(0)
+    const [deaths, setDeaths] = useState(0)
+    const [newCases, setNewCases] = useState(0)
+    const [newDeaths, setNewDeaths] = useState(0)
     const [numOfCases, setnumOfCases] = useState(0)
     const [numOfVax, setnumOfVax] = useState(0)
     const [hospitalization, setHospitalization] = useState(0)
@@ -21,7 +24,10 @@ function SingleState() {
         .getData(baseURL + state + nextURL)
         .then(response => {
           setPopulation(response.population)
+          setDeaths(response.actuals.deaths)
           setnumOfCases(response.actuals.cases)
+          setNewCases(response.actuals.newCases)
+          setNewDeaths(response.actuals.newDeaths)
           setnumOfVax(response.actuals.vaccinationsCompleted)
           setHospitalization(response.actuals.hospitalBeds.currentUsageCovid)
           setIcu(response.actuals.icuBeds.currentUsageCovid)
@@ -31,17 +37,17 @@ function SingleState() {
     const handleStateChange = (event) => {
       setState(event.target.value)
     }
-
-    //console.log(`population: ${population} cases: ${numOfCases} vax: ${numOfVax}`)
   
     return (
       <div>
         <div>
+          <br/>
           <h1 className = "App">Covid in {state}</h1>
-          <Form state = {state} handler = {handleStateChange}/>
+          <br/>
+          <Form className = "dropDown" state = {state} handler = {handleStateChange} status = "State: "/>
         </div>
         <div>
-          <Data p = {population} cases = {numOfCases} vax = {numOfVax} hos = {hospitalization} icu = {icu}/>
+          <SingleData cases = {numOfCases} death = {deaths} newCases = {newCases} newDeaths = {newDeaths}/>
         </div>
       </div>
     );

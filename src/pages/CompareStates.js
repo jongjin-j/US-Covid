@@ -12,6 +12,7 @@ function CompareStates() {
     const [population_1, setPopulation_1] = useState(0)
     const [numOfCases_1, setnumOfCases_1] = useState(0)
     const [numOfVax_1, setnumOfVax_1] = useState(0)
+    const [deaths_1, setDeaths_1] = useState(0)
     const [hospitalization_1, setHospitalization_1] = useState(0)
     const [icu_1, setIcu_1] = useState(0)
 
@@ -19,6 +20,7 @@ function CompareStates() {
     const [population_2, setPopulation_2] = useState(0)
     const [numOfCases_2, setnumOfCases_2] = useState(0)
     const [numOfVax_2, setnumOfVax_2] = useState(0)
+    const [deaths_2, setDeaths_2] = useState(0)
     const [hospitalization_2, setHospitalization_2] = useState(0)
     const [icu_2, setIcu_2] = useState(0)
   
@@ -29,6 +31,7 @@ function CompareStates() {
           setPopulation_1(response.population)
           setnumOfCases_1(response.actuals.cases)
           setnumOfVax_1(response.actuals.vaccinationsCompleted)
+          setDeaths_1(response.actuals.deaths)
           setHospitalization_1(response.actuals.hospitalBeds.currentUsageCovid)
           setIcu_1(response.actuals.icuBeds.currentUsageCovid)
         })
@@ -41,6 +44,7 @@ function CompareStates() {
             setPopulation_2(response.population)
             setnumOfCases_2(response.actuals.cases)
             setnumOfVax_2(response.actuals.vaccinationsCompleted)
+            setDeaths_2(response.actuals.deaths)
             setHospitalization_2(response.actuals.hospitalBeds.currentUsageCovid)
             setIcu_2(response.actuals.icuBeds.currentUsageCovid)
           })
@@ -62,15 +66,17 @@ function CompareStates() {
       <div>
         <div>
           <h1 className = "App">Compare Two States</h1>
+          <br/>
           <div>
-            <Form state = {state_1} handler = {handleStateChange_1}/>
-            <Form state = {state_2} handler = {handleStateChange_2}/>
+            <Form state = {state_1} handler = {handleStateChange_1} status = "State 1: "/>
+            <Form state = {state_2} handler = {handleStateChange_2} status = "State 2: "/>
           </div>
-          
+        <br/>
         </div>
         <div>
-          <Data p = {population_1} cases = {numOfCases_1} vax = {numOfVax_1} hos = {hospitalization_1} icu = {icu_1}/>
-          <Data p = {population_2} cases = {numOfCases_2} vax = {numOfVax_2} hos = {hospitalization_2} icu = {icu_2}/>
+          <Data p = {population_1} cases = {numOfCases_1} death = {deaths_1} vax = {numOfVax_1} hos = {hospitalization_1} icu = {icu_1}/>
+          <br></br>
+          <Data p = {population_2} cases = {numOfCases_2} death = {deaths_2} vax = {numOfVax_2} hos = {hospitalization_2} icu = {icu_2}/>
         </div>
       </div>
     );

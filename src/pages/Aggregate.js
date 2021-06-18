@@ -1,9 +1,7 @@
 import '../App.css'
 import covidService from '../services/covidData'
 import React, { useEffect, useState } from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Data from '../components/Data'
-import Form from '../components/Form'
 
 function Aggregate() {
     const baseURL = 'https://api.covidactnow.org/v2/country/US.json?apiKey=d544d096cb08454ca99717745e489f14'
