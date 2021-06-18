@@ -3,6 +3,8 @@ import covidService from '../services/covidData'
 import React, { useEffect, useState } from 'react'
 import Form from '../components/Form'
 import SingleData from '../components/SingleData'
+import SingleChart from '../components/SingleChart'
+
 
 function SingleState() {
 
@@ -42,13 +44,14 @@ function SingleState() {
       <div>
         <div>
           <br/>
-          <h1 className = "App">Covid in {state}</h1>
+          <h1 className = "title">Covid in {state}</h1>
           <br/>
           <Form className = "dropDown" state = {state} handler = {handleStateChange} status = "State: "/>
         </div>
         <div>
           <SingleData cases = {numOfCases} death = {deaths} newCases = {newCases} newDeaths = {newDeaths}/>
         </div>
+        <SingleChart p = {population} vax = {numOfVax} hos = {hospitalization} icu = {icu}/>
       </div>
     );
   }

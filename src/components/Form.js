@@ -4,7 +4,7 @@ import '../App.css'
 function Form({state, handler, status}) {
     return (
         <form className = "form">
-            <label> {status} &nbsp;
+            <label className = "dropDownLabel"> {status} &nbsp;
               <select className = "dropDown" value = {state} onChange = {(handler)}>
                 <option>AL</option>
                 <option>AK</option>

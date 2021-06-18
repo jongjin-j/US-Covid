@@ -7,9 +7,10 @@ import Typography from '@material-ui/core/Typography'
 const useStyles = makeStyles({
     root: {
       width: '16rem',
-      background: '#add8e6',
-      marginRight: 600,
-      marginTop: 20
+      background: '#c7ebd0',
+      marginTop: -50,
+      float: 'right',
+      marginRight: 40
     },
     title: {
       fontSize: 14,

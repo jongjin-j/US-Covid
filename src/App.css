@@ -1,4 +1,4 @@
-.App {
+.title {
   text-align: center;
 }
 
@@ -20,4 +20,28 @@ a {
 
 .dropDown {
   background-color: beige;
+}
+
+.dropDownLabel {
+  font-size: 22px;
+}
+
+select {
+  font-size: 19px;
+}
+
+.doughnut_1 {
+  height: 400px;
+  width: 400px;
+  margin-top: 5%;
+  margin-bottom: 50px;
+  margin-left: 10%;
+  float: left;
+}
+
+.doughnut_2 {
+  height: 400px;
+  width: 400px;
+  margin-top: 5%;
+  float: right;
 }

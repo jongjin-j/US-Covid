@@ -57,15 +57,11 @@ function CompareStates() {
     const handleStateChange_2 = (event) => {
         setState_2(event.target.value)
     }
-
-
-
-    //console.log(`population: ${population} cases: ${numOfCases} vax: ${numOfVax}`)
   
     return (
       <div>
         <div>
-          <h1 className = "App">Compare Two States</h1>
+          <h1 className = "title">Compare Two States</h1>
           <br/>
           <div>
             <Form state = {state_1} handler = {handleStateChange_1} status = "State 1: "/>
