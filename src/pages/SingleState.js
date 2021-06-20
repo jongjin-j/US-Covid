@@ -2,8 +2,8 @@ import '../App.css'
 import covidService from '../services/covidData'
 import React, { useEffect, useState } from 'react'
 import Form from '../components/Form'
-import SingleData from '../components/SingleData'
-import SingleChart from '../components/SingleChart'
+import SingleData from '../components/singleState/SingleData'
+import SingleChart from '../components/singleState/SingleChart'
 
 
 function SingleState() {

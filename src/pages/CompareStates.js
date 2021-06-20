@@ -1,8 +1,8 @@
 import '../App.css'
 import covidService from '../services/covidData'
 import React, { useEffect, useState } from 'react'
-import Data from '../components/Data'
 import Form from '../components/Form'
+import CompareData from '../components/compare/CompareData'
 
 function CompareStates() {
     const baseURL = 'https://api.covidactnow.org/v2/state/'
@@ -70,9 +70,13 @@ function CompareStates() {
         <br/>
         </div>
         <div>
-          <Data p = {population_1} cases = {numOfCases_1} death = {deaths_1} vax = {numOfVax_1} hos = {hospitalization_1} icu = {icu_1}/>
+          <div className = "card1">
+            <CompareData state = {state_1} p = {population_1} cases = {numOfCases_1} death = {deaths_1} vax = {numOfVax_1} hos = {hospitalization_1} icu = {icu_1}/>
+          </div>
           <br></br>
-          <Data p = {population_2} cases = {numOfCases_2} death = {deaths_2} vax = {numOfVax_2} hos = {hospitalization_2} icu = {icu_2}/>
+          <div className = "card2">
+            <CompareData state = {state_2} p = {population_2} cases = {numOfCases_2} death = {deaths_2} vax = {numOfVax_2} hos = {hospitalization_2} icu = {icu_2}/>
+          </div>
         </div>
       </div>
     );

@@ -35,7 +35,7 @@ select {
   width: 400px;
   margin-top: 5%;
   margin-bottom: 50px;
-  margin-left: 10%;
+  margin-left: 20%;
   float: left;
 }
 
@@ -44,4 +44,12 @@ select {
   width: 400px;
   margin-top: 5%;
   float: right;
+}
+
+.card1 {
+  margin-top: -3%;
+}
+
+.card2 {
+  margin-top: 12%;
 }

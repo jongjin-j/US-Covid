@@ -1,12 +1,13 @@
 import React from 'react'
 
-const Data = ({p, cases, death, vax, hos, icu}) => {
+const Data = ({state, p, cases, death, vax, hos, icu}) => {
     return(
       <div>
+        <h3>{state}</h3>
         <p>Total cases: {cases}</p>
         <p>Deaths: {death}</p>
-        <p>Percentage of vaccinated: {Math.round(vax / p * 1000) / 10}%</p>
-        <p>Total number of people hospitalized(Covid): {hos + icu}</p>
+        <p>Percentage vaccinated: {Math.round(vax / p * 1000) / 10}%</p>
+        <p>Hospitalized(Covid): {hos + icu}</p>
       </div>
     )
 }

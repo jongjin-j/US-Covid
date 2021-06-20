@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import * as FaIcons from 'react-icons/fa'
-import * as AiIcons from 'react-icons/ai'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import {NavbarElements} from './NavbarElements'
 import './Navbar.css'
@@ -8,7 +6,32 @@ import {IconContext} from 'react-icons'
 
 
 function Navbar() {
-    const [sideBar, setSideBar] = useState(false)
+    return(
+        <>
+        <IconContext.Provider value={{ color: 'white' }}>
+            <nav className = "nav-menu">
+                <ul className = "nav-menu-items">
+                    <br></br>
+                    {NavbarElements.map((item, index) => {
+                        return(
+                            <li key = {index} className = {item.className}>
+                                <Link to = {item.path}>
+                                    {item.icon}
+                                    <span>{item.title}</span>
+                                </Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </nav>
+        </IconContext.Provider>
+        </>
+    )
+}
+
+export default Navbar
+
+/*const [sideBar, setSideBar] = useState(false)
 
     const toggleSideBar = () => {
         setSideBar(!sideBar)
@@ -44,6 +67,4 @@ function Navbar() {
             </IconContext.Provider>
         </>
     )
-}
-
-export default Navbar
+*/
