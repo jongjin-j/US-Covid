@@ -53,3 +53,8 @@ select {
 .card2 {
   margin-top: 12%;
 }
+
+.bar_1 {
+  height: 260px;
+  width: 260px;
+}
