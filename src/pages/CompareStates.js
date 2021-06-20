@@ -62,25 +62,37 @@ function CompareStates() {
     return (
       <div>
         <div>
+          <br/>
           <h1 className = "title">Compare Two States</h1>
           <br/>
-          <div>
+          <div className = "form_1">
             <Form state = {state_1} handler = {handleStateChange_1} status = "State 1: "/>
+          </div>
+          <div className = "form_2">
             <Form state = {state_2} handler = {handleStateChange_2} status = "State 2: "/>
           </div>
         <br/>
         </div>
         <div>
           <div className = "card1">
-            <CompareData state = {state_1} p = {population_1} cases = {numOfCases_1} death = {deaths_1} vax = {numOfVax_1} hos = {hospitalization_1} icu = {icu_1}/>
+            <CompareData state = {state_1} p = {population_1} cases = {numOfCases_1} death = {deaths_1}
+               vax = {numOfVax_1} hos = {hospitalization_1} icu = {icu_1}
+            />
           </div>
           <br></br>
           <div className = "card2">
-            <CompareData state = {state_2} p = {population_2} cases = {numOfCases_2} death = {deaths_2} vax = {numOfVax_2} hos = {hospitalization_2} icu = {icu_2}/>
+            <CompareData state = {state_2} p = {population_2} cases = {numOfCases_2} death = {deaths_2}
+                vax = {numOfVax_2} hos = {hospitalization_2} icu = {icu_2}
+            />
           </div>
-          <div>
-            <CompareChart/>
-          </div>
+          <CompareChart 
+              state_1 = {state_1} state_2 = {state_2}
+              cases_1 = {numOfCases_1} cases_2 = {numOfCases_2} 
+              death_1 = {deaths_1} death_2 = {deaths_2} 
+              vax_1 = {numOfVax_1} vax_2 = {numOfVax_2} 
+              p_1 = {population_1} p_2 = {population_2} 
+              hos_1 = {hospitalization_1 + icu_1} hos_2 = {hospitalization_2 + icu_2}
+          />
         </div>
       </div>
     );

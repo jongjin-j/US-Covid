@@ -4,32 +4,39 @@ import { Bar } from 'react-chartjs-2'
 
 const options = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
-      xAxes: [{
-        barPercentage: 0.2
-      }],
       yAxes: [
         {
           ticks: {
-            beginAtZero: true,
+            beginAtZero: true
           },
-        },
-        {
-            barPercentage: 0.2
         }
       ],
     },
 };
 
-const CompareChart = ({p, vax, hos, icu}) => {
-    //const vaxRate = Math.round(vax / p * 1000) / 10
+const vaxOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    y : {
+      max: 100,
+      labelString: 'ytext'
+    },
+  },
+};
 
-    const data = {
-        labels: ['Red', 'Blue'],
+const CompareChart = ({state_1, state_2, cases_1, cases_2, death_1, death_2, p_1, p_2, vax_1, vax_2, hos_1, hos_2}) => {
+    const vaxRate_1 = Math.round(vax_1 / p_1 * 1000) / 10;
+    const vaxRate_2 = Math.round(vax_2 / p_2 * 1000) / 10;
+
+    const caseData = {
+        labels: [`${state_1}`, `${state_2}`],
         datasets: [
           {
-            label: '# of Votes',
-            data: [12, 19],
+            label: 'Total Cases',
+            data: [cases_1, cases_2],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)'
@@ -41,12 +48,79 @@ const CompareChart = ({p, vax, hos, icu}) => {
             borderWidth: 1,
           },
         ],
-      };
+    };
+
+    const deathData = {
+      labels: [`${state_1}`, `${state_2}`],
+        datasets: [
+          {
+            label: 'Deaths',
+            data: [death_1, death_2],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1,
+          },
+        ],
+    };
+
+    const vaxData = {
+      labels: [`${state_1}`, `${state_2}`],
+        datasets: [
+          {
+            label: 'Vaccination Rate (%)',
+            data: [vaxRate_1, vaxRate_2],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1,
+          },
+        ],
+    };
+
+    const hospitalizedData = {
+      labels: [`${state_1}`, `${state_2}`],
+        datasets: [
+          {
+            label: 'Total Hospitalized',
+            data: [hos_1, hos_2],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1,
+          },
+        ],
+    };
 
   return(
-    <div classname = "bar_1">
-        <Bar data={data} options={options}/>
-        <p className = "bar_1">hi</p>
+    <div>
+      <div className = "bar_1">
+          <Bar data={caseData} options={options}/>
+      </div>
+      <div className = "bar_2">
+          <Bar data={deathData} options={options}/>
+      </div>
+      <div className = "bar_3">
+          <Bar data={vaxData} options={vaxOptions}/>
+      </div>
+      <div className = "bar_4">
+          <Bar data={hospitalizedData} options={options}/>
+      </div>
     </div>
     
   )

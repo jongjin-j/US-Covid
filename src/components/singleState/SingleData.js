@@ -28,7 +28,7 @@ const SingleData = ({cases, death, newCases, newDeaths}) => {
         <Card className = {classes.root}>
             <CardContent>
                 <Typography variant = "h5" component = "h2">
-                    Main Statistics
+                    Key Information
                 </Typography>
                 <Typography className={classes.pos}>
                     Total cases: {cases}
