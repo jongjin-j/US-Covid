@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography'
 const useStyles = makeStyles({
     root: {
       width: '16rem',
-      background: '#c7ebd0',
+      background: '#e0e0e0',
       marginTop: -50,
       float: 'right',
       marginRight: 40
@@ -27,9 +27,7 @@ const SingleData = ({cases, death, newCases, newDeaths}) => {
     return(
         <Card className = {classes.root}>
             <CardContent>
-                <Typography variant = "h5" component = "h2">
-                    Key Information
-                </Typography>
+                <Typography variant = "h5" component = "h2"/>
                 <Typography className={classes.pos}>
                     Total cases: {cases}
                     <br/>

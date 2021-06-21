@@ -1,0 +1,27 @@
+.source {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.github {
+  text-align: center;
+  margin-top: 2%;
+  margin-right: 5.5%;
+}
+
+.github_icon {
+  font-size: 40;
+  text-align: center;
+  margin-left: 6.5%;
+  margin-top: -2%;
+}
+
+.arrow {
+  text-align: center;
+  margin-left: 0.5%;
+  margin-top: -2.3%;
+}
+
+.source-container {
+  margin-left: 10%;
+}

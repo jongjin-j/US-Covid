@@ -1,4 +1,5 @@
 import '../../App.css'
+import '../Chart.css'
 import { Bar } from 'react-chartjs-2'
 
 
@@ -38,12 +39,12 @@ const CompareChart = ({state_1, state_2, cases_1, cases_2, death_1, death_2, p_1
             label: 'Total Cases',
             data: [cases_1, cases_2],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderWidth: 1,
           },
@@ -57,12 +58,12 @@ const CompareChart = ({state_1, state_2, cases_1, cases_2, death_1, death_2, p_1
             label: 'Deaths',
             data: [death_1, death_2],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderWidth: 1,
           },
@@ -76,12 +77,12 @@ const CompareChart = ({state_1, state_2, cases_1, cases_2, death_1, death_2, p_1
             label: 'Vaccination Rate (%)',
             data: [vaxRate_1, vaxRate_2],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderWidth: 1,
           },
@@ -95,12 +96,12 @@ const CompareChart = ({state_1, state_2, cases_1, cases_2, death_1, death_2, p_1
             label: 'Total Hospitalized',
             data: [hos_1, hos_2],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
             ],
             borderWidth: 1,
           },

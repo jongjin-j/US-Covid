@@ -1,4 +1,5 @@
 import '../App.css'
+import '../components/Chart.css'
 import covidService from '../services/covidData'
 import React, { useEffect, useState } from 'react'
 import Form from '../components/Form'

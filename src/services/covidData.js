@@ -5,4 +5,8 @@ const getData = (baseURL) => {
     return request.then(response => response.data)
 }
 
-export default {getData}
+const getDataObject = {
+    getData
+}
+
+export default getDataObject
