@@ -10,7 +10,7 @@ import SingleChart from '../components/singleState/SingleChart'
 function SingleState() {
 
     const baseURL = 'https://api.covidactnow.org/v2/state/'
-    const nextURL = '.json?apiKey=d544d096cb08454ca99717745e489f14'
+    const nextURL = `.json?apiKey=${process.env.REACT_APP_API_KEY}`
   
     const [state, setState] = useState('MA')
     const [population, setPopulation] = useState(0)
@@ -35,7 +35,7 @@ function SingleState() {
           setHospitalization(response.actuals.hospitalBeds.currentUsageCovid)
           setIcu(response.actuals.icuBeds.currentUsageCovid)
         })
-    }, [state])
+    }, [state, nextURL])
   
     const handleStateChange = (event) => {
       setState(event.target.value)

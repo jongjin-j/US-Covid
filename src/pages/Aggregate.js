@@ -6,7 +6,7 @@ import SingleData from '../components/singleState/SingleData'
 import SingleChart from '../components/singleState/SingleChart'
 
 function Aggregate() {
-    const baseURL = 'https://api.covidactnow.org/v2/country/US.json?apiKey=d544d096cb08454ca99717745e489f14'
+    const baseURL = `https://api.covidactnow.org/v2/country/US.json?apiKey=${process.env.REACT_APP_API_KEY}`
     
     const [population, setPopulation] = useState(0)
     const [death, setDeath] = useState(0)
@@ -30,7 +30,7 @@ function Aggregate() {
             setHospitalization(response.actuals.hospitalBeds.currentUsageCovid)
             setIcu(response.actuals.icuBeds.currentUsageCovid)
           })
-      }, [])
+      }, [baseURL])
 
     return (
         <div className = "title">

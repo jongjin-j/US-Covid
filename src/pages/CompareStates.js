@@ -8,7 +8,7 @@ import CompareChart from '../components/compare/CompareChart'
 
 function CompareStates() {
     const baseURL = 'https://api.covidactnow.org/v2/state/'
-    const nextURL = '.json?apiKey=d544d096cb08454ca99717745e489f14'
+    const nextURL = `.json?apiKey=${process.env.REACT_APP_API_KEY}`
   
     const [state_1, setState_1] = useState('MA')
     const [population_1, setPopulation_1] = useState(0)
@@ -37,7 +37,7 @@ function CompareStates() {
           setHospitalization_1(response.actuals.hospitalBeds.currentUsageCovid)
           setIcu_1(response.actuals.icuBeds.currentUsageCovid)
         })
-    }, [state_1])
+    }, [state_1, nextURL])
 
     useEffect(() => {
         covidService
@@ -50,7 +50,7 @@ function CompareStates() {
             setHospitalization_2(response.actuals.hospitalBeds.currentUsageCovid)
             setIcu_2(response.actuals.icuBeds.currentUsageCovid)
           })
-      }, [state_2])
+      }, [state_2, nextURL])
   
     const handleStateChange_1 = (event) => {
       setState_1(event.target.value)

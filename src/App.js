@@ -7,7 +7,6 @@ import Aggregate from './pages/Aggregate'
 import Source from './pages/Source'
 import Navbar from './components/navbar/Navbar'
 
-
 function App() {
   return (
     <div>
